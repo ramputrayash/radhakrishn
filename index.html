@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="client.js"></script>
+    <link rel="stylesheet" href="client.css">
+</head>
+<body>
+    <nav>
+        <p class="logo">WhatsApp</p>
+    </nav>
+    <div class="container">
+        <header>Chat App</header>
+        <div class="content">
+            <div class="message left">Harry: Hey how are you</div>
+            <div class="message right">Rohan: Hey I am fine</div>
+        </div>
+        <div class="send">
+                <input type="text" placeholder="Enter message here...">
+                <button onclick="send()">Send</button>           
+        </div>
+    </div>
+</body>
+<script defer>
+    const Inputmsg = document.querySelector("input"),
+content = document.querySelector(".content");
+
+function send() {
+    if(Inputmsg.value === ""){
+        alert("Please Enter Some values to send");
+    }
+    else {
+        let msg = document.createElement("div");
+        msg.className = "message right";
+        msg.innerText = Inputmsg.value;
+        content.appendChild(msg);
+    }
+    Inputmsg.value="";
+}
+</script>
+</html>
